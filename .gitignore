@@ -1,0 +1,10 @@
+.svn/
+*.glo
+*.toc
+*.pdf
+*.ist
+*.aux
+*.glg
+*.inputs
+*.gls
+*.out

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg7121"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   sodipodi:docname="8.svg"
+   inkscape:export-filename="/media/Documents/Planète Sciences/Projets/SqueakBot/SqueakBot Pas à Pas/captures/6.png"
+   inkscape:export-xdpi="199"
+   inkscape:export-ydpi="199">
+  <defs
+     id="defs7123">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective7129" />
+    <inkscape:perspective
+       id="perspective7139"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7174"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7232"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7260"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7260-0"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7318"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7372"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7922"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7961"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8005"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8005-5"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8083"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8111"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8152"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8189"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8226"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8263"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8302"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8358"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8481"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8525"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective8563"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="352.03676"
+     inkscape:cy="681.35467"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="834"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7126">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="58.580307"
+       x="-90.040497"
+       id="image8360"
+       height="638"
+       width="968"
+       xlink:href="file:///home/skadge/Bureau/Plan%C3%A8te%20Sciences/Projets/SqueakBot/SqueakBot%20Pas%20%C3%A0%20Pas/captures/8.png" />
+    <g
+       style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:1;stroke-opacity:1"
+       id="g4260-5-3-2-1-3-0"
+       transform="matrix(0.66756084,-1.6586658,1.4991951,0.6015731,-539.73183,1209.7822)">
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
+         d="M 558.73566,57.257325 558.277,112.76393"
+         id="path3624-2-5-1-4-7-7" />
+      <path
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5.19999981;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 549.92347,97.155979 8.49148,23.807011 8.21559,-24.005391 -16.70707,0.19838 z"
+         id="path4258-5-3-0-8-3-1"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <rect
+       style="fill:none;stroke:#404040;stroke-width:4.99999809;stroke-linejoin:miter;stroke-miterlimit:2.20000005;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3590-4-7"
+       width="210.0981"
+       height="34.632298"
+       x="145.80809"
+       y="587.88477"
+       rx="11.012921"
+       ry="11.01292" />
+    <text
+       xml:space="preserve"
+       style="font-size:27.63793755px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#404040;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="257.1329"
+       y="613.48163"
+       id="text3592-3-8"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="257.1329"
+         y="636.68103"
+         style="font-size:27.63793755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         id="tspan7308">Visualisateur</tspan></text>
+    <g
+       style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:1;stroke-opacity:1"
+       id="g4260-5-3-2-1-3-0-3"
+       transform="matrix(-0.47022762,-0.88254518,0.88254518,-0.47022762,563.3736,1109.248)">
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
+         d="M 558.73566,57.257325 558.277,112.76393"
+         id="path3624-2-5-1-4-7-7-9" />
+      <path
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5.19999981;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 549.92347,97.155979 8.49148,23.807011 8.21559,-24.005391 -16.70707,0.19838 z"
+         id="path4258-5-3-0-8-3-1-9"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <rect
+       style="fill:none;stroke:#404040;stroke-width:4.99999857;stroke-linejoin:miter;stroke-miterlimit:2.20000005;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3590-4-7-6"
+       width="292.93063"
+       height="51.804886"
+       x="62.636269"
+       y="142.07117"
+       rx="11.012921"
+       ry="11.012919" />
+    <text
+       xml:space="preserve"
+       style="font-size:27.63793755px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#404040;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="210.32657"
+       y="163.62744"
+       id="text3592-3-8-4"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="210.32657"
+         y="163.62744"
+         style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         id="tspan8545">Icône raccourci pour</tspan><tspan
+         sodipodi:role="line"
+         x="210.32657"
+         y="185.62744"
+         style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         id="tspan8547">ouvrir/fermer le visualisateur</tspan></text>
+    <g
+       style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:1;stroke-opacity:1"
+       id="g4260-5-3-2-1-3-0-3-9"
+       transform="matrix(-0.00851287,-0.99996377,0.99996377,-0.00851287,280.75189,728.31909)">
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
+         d="M 558.55507,78.46976 558.277,112.76393"
+         id="path3624-2-5-1-4-7-7-9-3" />
+      <path
+         style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:5.19999981;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 549.92347,97.155979 8.49148,23.807011 8.21559,-24.005391 -16.70707,0.19838 z"
+         id="path4258-5-3-0-8-3-1-9-2"
+         sodipodi:nodetypes="cccc" />
+    </g>
+  </g>
+</svg>
