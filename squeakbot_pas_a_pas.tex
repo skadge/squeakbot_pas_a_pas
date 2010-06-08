@@ -541,6 +541,7 @@ Utilisons notre script \code{raz} pour faire un peu de ménage avant de passer �
 
 L'objectif de notre projet est de simuler l'évolution d'une population de bestiole qui se reproduit, se nourrit et meure. La première étape est donc de les faire se \og reproduire \fg. Nous allons simplifier un peu ce que nous propose la nature, et des bébés bestioles apparaiteront dès que deux bestioles de couleur différente se toucheront.
 
+\afaire{
 Pour cela, repartons où nous en étions resté au chapitre précédent :
 
 \capture{34.png}
@@ -563,13 +564,75 @@ Or, nous ne voulons pas ajouter un point, mais une copie de la bestiole. Nous po
 \capture{37.png}
 
 \marginpar{Tous les scripts peuvent être démarrés et arrêter depuis la catégorie \important{Scripts} du visualisateur de l'objet auquel ils appartiennent. C'est parfois bien pratique pour ne pas envahir le bureau avec des multitudes de fenêtres.}
-Sauvegardons l'image en cours, et testons notre nouveau script en démarrant préalablement le script \code{mouvementBestiole}. Une catastrophe s'annonce~: en effet, dès que la bestiole violette touche la bestiole orange, \appName va créer très rapidement des copies de la bestiole violette et en quelques secondes, \appName va se bloquer... On a gagné le droit d'interrompre et de redémarrer \appName...
+Sauvegardons l'image en cours, et testons notre nouveau script en démarrant préalablement le script \code{mouvementBestiole}. Une catastrophe s'annonce~: en effet, dès que la bestiole violette touche la bestiole orange, \appName va créer très rapidement des copies de la bestiole violette et en quelques secondes, le logiciel va se bloquer... On a gagné le droit d'interrompre et de redémarrer \appName...
 
 \capture{38.png}
 
+}
+
 Comment éviter celà ?
-\section{Quand je serais grand...}
-\fixme {La taille de la bestiole augmente avec l'âge}
+
+Il y a plusieurs choses à faire :
+\begin{enumerate}
+	\item Créer un script qui permette de détruire facilement toutes les copies,
+	\item Rajouter ce script au script de remise à zéro,
+	\item Éloigner notre bestiole de la bestiole violette dès qu'elle a fait un bébé,
+	\item Essayer d'éviter que le bébé ne touche lui aussi directement la bestiole orange pour, là non plus, ne pas faire de \og bébés en série \fg.
+\end{enumerate}
+
+Prenons ces différents points dans l'ordre~:
+
+Pour détruire facilement toutes les copies de notre bestiole, il faut d'abord savoir que les copies réalisées avec la brique \brique{copie} sont ce que \appName appelle des \textit{frères} de notre bestiole. Ils gardent un lien particulier avec leur modèle initial, ce qui permet par exemple d'exécuter un script sur toutes les copies à la fois avec la brique \brique{dit à la fratrie} de la catégorie \important{Contrôle des scripts}.
+
+Si on ajoute un script \code{meure} à notre bestiole, qui la fait disparaitre, on peut \og tuer \fg tous les frères en utilisant la brique \brique{dit à la fratrie meure}. Créons un nouveau script \code{tuerMesFreres} qui fait ça :
+
+\capture{39.png}
+
+Par contre, attention à ne pas supprimer notre première bestiole en exécutant son script \code{meure}, sinon, il faudra tout recommencer !
+
+Pour s'assurer de toujours garder un modèle (ou \textit{prototype}) de notre bestiole, une bonne idée est de la glisser dans le menu \important{Accessoires} :
+
+\capture{40.png}
+
+Il est maintenant facile de refaire des copies de notre bestiole si par hasard on les supprime toute, en faisant un simple glisser-déposer depuis le tiroir des accessoires vers le bureau.
+
+\fixme{Probleme avec cette approche, le script RAZ ne marche plus !}
+
+Ajoutons le script \code{tuerMesFreres} dans le script de remise à zéro (accessible en cliquant sur l'icône \icon{scriptassocie} du halo du bouton \textit{Remise à zéro}).
+
+Ensuite, nous voulons éloigner la bestiole violette de la bestiole orange quand elles se touchent. Pour cela, nous pouvons ajouter des actions dans le test de couleur qui crée les copies. Il faut faire faire demi-tour à la bestiole (c'est-à-dire ajouter 180 degrés à son cap), et la faire avancer un peu pour être sûr qu'elle ne touche plus la bestiole orange.
+
+Pour ajouter 180 degrés au cap, il faut glisser la brique \brique{cap} de la bestiole dans le test, en l'attrapant par la \icon{flecheverte} flêche verte. En cliquant ensuite sur \brique{cap $\leftarrow$}, on accède à un menu dans lequel on peut choisir \code{augmenter de}.
+\capture{41.png}
+
+\marginpar{Attention~: nos bestioles se reproduisent quand une bestiole violette touche du orange ...or la brique de test contient du orange ! Les bestioles vont donc aussi se multiplier lorsqu'elles touchent la brique de test. On peut éviter ça en masquant le test avec l'icône \icon{minimiser}. Voyez-vous une autre manière de faire, en changeant le type de test ?}
+Après quelques contacts, de nouvelles bestioles apparaissent :
+
+\capture{42.png}
+
+\section{Quand je serais grand... introduisons les variables}
+
+Nous voulons simuler que nos bestioles vieillissent. Pour cela, nous allons avoir besoin d'une nouvelle brique paramètre pour nos bestioles qui contiendra l'âge.
+
+C'est très simple à faire grâce au bouton \icon{variable} \important{Variable} du visualisateur d'un objet :
+
+\capture{43bis.png}
+
+Créons donc une variable \code{age}, et changeons sa valeur pour la mettre à zéro.
+
+Comment faire pour faire \og vieillir \fg la bestiole ? Il faudrait incrémenter, par exemple toute les secondes, l'âge de la bestiole.
+
+\marginpar{Pour changer le rythme d'exécution d'un programme, il faut cliquer et rester appuyé sur l'icône \icon{horlogestop} du script jusqu'à ce que le menu \textit{Rythme} s'affiche. On peut alors choisir combien de fois pas seconde le script doit s'exécuter.}
+Créons un nouveau script, \code{vieillit}, chargé de cette tâche, et changeons sa vitesse d'exécution pour qu'il soit appelé une fois par seconde~:
+
+\capture{44.png}
+
+Si on teste ce script en le mettant en marche, l'âge de la bestiole devrait augmenter petit à petit.
+
+\marginpar{Pour faire une comparaison d'une valeur numérique, il suffit de glisser une brique numérique sur le test : les opérateurs de comparaison vont être automatiquement ajoutés, comme sur la capture d'écran ci-contre.}
+Pour faire mourir notre bestiole quand elle devient trop vieille, il suffit d'ajouter un test au script \code{vieillit} qui appelle le script \code{meure} de la bestiole quand son âge est supérieur à l'âge maximal (par exemple, 100) :
+
+\capture{45.png}
 
 \section{C'est la fin}
 \fixme {Les bestioles meurent quand elles deviennent trop vieilles}
