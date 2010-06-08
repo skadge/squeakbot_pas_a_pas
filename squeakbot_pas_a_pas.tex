@@ -4,35 +4,22 @@
 %%         Planète Sciences 2009-2010          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Auteurs: Séverin Lemaignan, ...
+%% Authors: Séverin Lemaignan
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Mais non Nadia, il ne faut pas avoir peur ! %%
-%%                                             %%
-%% A savoir :                                  %%
-%%  - les lignes qui commencent par % sont des %%
-%%    commentaires.                            %%
-%%  - ensuite, tu peux tout sauter jusqu'à     %% 
-%%    l'endroit où j'ai écrit : LÀ!!           %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\documentclass[a4paper,12pt,twoside]{article}
 \documentclass[a4paper,12pt]{book}
 
 \usepackage{graphicx}
 
-\usepackage{pdftricks}
-\begin{psinputs}
-   \usepackage{pstricks}
-   \usepackage{multido}
-\end{psinputs}
+\usepackage{xcolor}
 
 \usepackage{ifthen}
 
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 
-\usepackage{fancyhdr} %en tete et pied de page
+\usepackage{fancyhdr} %headers and footers
 
 \usepackage{url}
 \usepackage{hyperref}
@@ -48,7 +35,7 @@
 \usepackage[french]{babel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                           Glossaire                                       %%
+%%                           Glossary                                        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeglossaries
 %Pour re-générer le glossaire : makeindex squeakbot_pas_a_pas.glo -s squeakbot_pas_a_pas.ist -t squeakbot_pas_a_pas.glg -o squeakbot_pas_a_pas.gls
@@ -88,16 +75,9 @@
 \end{center}
 }
 
-%Un coup de PSTricks ?
 \newcommand{\brique}[1]
 {
-%\begin{pdfpic}
-%  \psset{unit=\linewidth}
-%   \begin{pspicture}(0,0)
-%      \rput(1,1){\psshadowbox*[fillcolor=green]{#1}}
-%   \end{pspicture}
-%\end{pdfpic}
-\texttt{#1}
+\fcolorbox[RGB]{200,192,144}{200,248,200}{\textbf{#1}}
 }
 
 %Commande pour la mise en forme du code, comme les noms de scripts
