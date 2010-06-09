@@ -58,6 +58,9 @@
 \newglossaryentry{monde}
 		{name={Monde}, 
 		description={Le \og monde \fg est l'ensemble du bureau de \appName. C'est un objet similaire aux autres~: on peut afficher son halo, son visualisateur, lui associer des scripts...}}
+\newglossaryentry{variable}
+		{name={Variable}, 
+		description={Une variable est une étiquette que l'on peut créer dans un objet, et qui va faire \textit{référence} à un autre objet, à un texte, à une valeur numérique... ça permet essentiellement de manipuler ou d'utiliser cet autre objet ou valeur dans un script.}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\appName{SqueakBot}
@@ -606,7 +609,7 @@ Ajoutons le script \code{tuerMesFreres} dans le script de remise à zéro (acces
 
 Ensuite, nous voulons éloigner la bestiole violette de la bestiole orange quand elles se touchent. Pour cela, nous pouvons ajouter des actions dans le test de couleur qui crée les copies. Il faut faire faire demi-tour à la bestiole (c'est-à-dire ajouter 180 degrés à son cap), et la faire avancer un peu pour être sûr qu'elle ne touche plus la bestiole orange.
 
-Pour ajouter 180 degrés au cap, il faut glisser la brique \brique{cap} de la bestiole dans le test, en l'attrapant par la \icon{flecheverte} flêche verte. En cliquant ensuite sur \brique{cap $\leftarrow$}, on accède à un menu dans lequel on peut choisir \code{augmenter de}.
+Pour ajouter 180 degrés au cap, il faut glisser la brique \brique{cap} de la bestiole dans le test, en l'attrapant par la \icon{flecheverte} flèche verte. En cliquant ensuite sur \brique{cap $\leftarrow$}, on accède à un menu dans lequel on peut choisir \code{augmenter de}.
 \capture{41.png}
 
 \marginpar{Attention~: nos bestioles se reproduisent quand une bestiole violette touche du orange ...or la brique de test contient du orange ! Les bestioles vont donc aussi se multiplier lorsqu'elles touchent la brique de test. On peut éviter ça en masquant le test avec l'icône \icon{minimiser}. Voyez-vous une autre manière de faire, en changeant le type de test ?}
@@ -618,10 +621,11 @@ Après quelques contacts, de nouvelles bestioles apparaissent :
 
 Nous voulons simuler que nos bestioles vieillissent. Pour cela, nous allons avoir besoin d'une nouvelle brique paramètre pour nos bestioles qui contiendra l'âge.
 
-C'est très simple à faire grâce au bouton \icon{variable} \important{Variable} du visualisateur d'un objet :
+C'est très simple à faire grâce au bouton \icon{variable} \motcle{variable} du visualisateur d'un objet :
 
 \capture{43bis.png}
 
+\afaire {
 Créons donc une variable \code{age}, et changeons sa valeur pour la mettre à zéro.
 
 Comment faire pour faire \og vieillir \fg la bestiole ? Il faudrait incrémenter, par exemple toute les secondes, l'âge de la bestiole.
@@ -638,10 +642,39 @@ Pour faire mourir notre bestiole quand elle devient trop vieille, il suffit d'aj
 
 \capture{45.png}
 
-\section{C'est la fin}
-\fixme {Les bestioles meurent quand elles deviennent trop vieilles}
+}
 
-\section{Bon apétit !}
+Attention ! Si vous attendez que la bestiole meure, elle va disparaitre, avec tous ces scripts ! C'est le moment de faire une copie de votre bestiole (avec \icon[Dupliquer]{dupliquer}) à garder dans un coin (ou dans le tiroir \important{Accessoires}, comme nous avons vu plus tôt). Pensez aussi à faire des sauvegardes régulières
+
+Si nous relançons la simulation, avec les bestioles qui se déplacent, se reproduisent, et meurent, nous allons cependant constater qu'il y a un problème : tous les enfants d'une bestiole meurent en même temps qu'elle, même s'ils ont été créé bien plus tard (et son donc plus jeunes). Comment cela se fait-il ?
+
+Lorsqu'on crée un enfant, on crée une copie de la bestiole initiale, avec tous ses paramètres... y compris son âge actuel !
+Nous voulons copier certains paramètres (la position de la bestiole, par exemple, afin que les petits apparaissent au même endroit que leurs parents, ou encore, l'état des scripts -- démarrés ou non -- pour que les enfants se mettent en marche immédiatement), mais par contre, il faut remettre l'âge à zéro.
+
+Pour pouvoir faire ça, il faut que l'on garde une \important{référence} vers les nouveaux objets créés quand on les copie, pour pouvoir ensuite changer leur âge. Et pour garder une référence, on utilise une variable !
+
+Ajoutons à notre bestiole une nouvelle variable (avec l'icône \icon{variable}) que nous allons appeler \code{bébé} et changeons son type actuel (\textit{nombre}) pour le remplacer par le type \textit{objet} (\textit{Player} en anglais)~:
+
+\capture{48.png}
+
+Modifions maintenant le script \code{seMultiplie}~: nous allons donner à la variable \brique{bébé} la valeur \brique{Ma bestiole.copie}, et ajouter dans le Monde cette copie, grâce à la variable \brique{bébé} qui fait maintenant \textit{référence} à la copie~:
+
+\capture{49.png}
+
+Jusque là, ça ne change pas grand chose. Mais comme on a maintenant sous la main une référence à notre nouvelle copie de bestiole, on va pouvoir modifier son âge~: pour cela, deux étapes. D'abord, il faut ajouter une brique \brique{age $\leftarrow$} normalement et la mettre à zéro~:
+
+\capture{50.png}
+
+Puis il faut \important{remplacer} la partie \brique{Ma bestiole.} (c'est à dire, l'objet duquel on veut changer l'âge) par la variable \brique{bébé} :
+
+\capture{51.png}
+
+Maintenant, quand de nouvelles bestioles voient le jour, elles démarrent bien avec un âge de 0.
+
+\section{Ça grandit, ça grandit}
+\fixme {Les bestioles changent de taille avec l'âge}
+
+\section{Bon appétit !}
 \fixme {Nourrir les bébêtes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
