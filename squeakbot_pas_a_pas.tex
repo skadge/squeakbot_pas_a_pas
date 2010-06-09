@@ -237,7 +237,7 @@ Voici les principales fonctions des différents boutons que l'on voit dans l'int
 Faisons un \cd sur le robot Minibot :
 \capture{1.png}
 
-Toute une série de petites icônes apparaissent. C'est ce qu'on appelle le \motcle{halo}. C'est elles qui vont nous permettre de jouer avec nos objets.
+Toute une série de petites icônes apparaissent. C'est ce qu'on appelle le \motcle{halo}. C'est elles qui vont nous permettre de manipuler nos objets.
 
 Voici le rôle des principales d'entre elles :
 
@@ -249,9 +249,11 @@ En cliquant (et en restant appuyé) sur\icon[Pivoter]{pivoter}, on peut faire to
 
 Nous verrons plus tard à quoi servent les autres icônes et comment modifier le cap et le centre de rotation d'un objet.
 
-En attendant, essaie de redimensionner Minibot avec \icon[Redimensioner]{redimensionner}.
+\afaire{
+En attendant, vous pouvez essayer de redimensionner Minibot avec \icon[Redimensioner]{redimensionner}.
+}
 
-Avant de continuer, faisons un peu de place : clique sur les objets qui sont sur le bureau pour les saisir, et glisse le texte et Minibot sur la corbeille. Si tu le souhaites, tu peux les y récupérer plus tard en double-cliquant sur la corbeille.
+Avant de continuer, faisons un peu de place : cliquons sur les objets qui sont sur le bureau pour les saisir, et glissons le texte et Minibot sur la corbeille. Si nécessaire, on peut les y récupérer plus tard en double-cliquant sur la corbeille.
 
 Voilà, avec ces premiers pas, nous avons vu ce qu'était un objet dans \appName, et nous avons découvert son halo, et les manipulations de base qui lui sont associées. Nous sommes en bonne route vers la programmation, mais avant cela, voyons comment créer nos propres objets en les dessinant.
 
@@ -269,13 +271,15 @@ Ceci ouvre le mode dessin :
 
 \capture{5.png}
 
-Au centre de l'écran apparait une zone blanche : c'est le \important{calque de dessin}. Tout le dessin doit tenir dedans, et s'il est trop petit, on peut le redimensionner comme tous les objets, en faisant un \cd dessus, puis en utilisant \icon{redimensionner}.
+Au centre de l'écran apparait une zone blanche : c'est le \important{calque de dessin}. Tout le dessin doit tenir dedans, et s'il est trop petit, on peut le redimensionner comme tous les objets, en faisant un \cd dessus, puis en utilisant l'icône \icon{redimensionner}.
 
 L'illustration ci-dessous présente les différentes fonctionalités de la palette de dessin :
 
 \capture{6.png}
 
-\afaire{Avec ça, ça ne devrait pas poser de problèmes pour dessiner une bestiole ! (pense à utiliser les formes géométriques qui sont dans le tiroir en bas à droite).}
+\afaire{
+Avec ça, ça ne devrait pas poser de problèmes pour dessiner une bestiole ! (pensez à utiliser les formes géométriques qui sont dans le tiroir en bas à droite).
+}
 
 \begin{center}
     \includegraphics[width=8cm]{bestioles.png}
@@ -289,12 +293,12 @@ Donnons lui un nom en faisant un \cd dessus, puis un \cg sur le mot \texttt{Dess
 
 \capture{7.png}
 
-Nous sommes maintenant prêt pour la programmation !
+Nous sommes maintenant prêt pour la programmation.
 
 \section{Notre premier programme}
 \label{premier_programme}
 
-Nous avons fait connaissance avec les objets. Si nous essayions maintenant de leur donner vie~? Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\marginpar{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName est appelé \important{langage orienté objet}.}
+Nous avons fait connaissance avec les objets. Ils sont encore bien statiques... Essayons maintenant de leur donner vie. Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\marginpar{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName est appelé \important{langage orienté objet}.}
 
 Le point de départ pour tous les programmes (ou \motcle{script}, comme nous allons les appeler dans \appName), c'est le \motcle{visualisateur} de chaque objet.
 
@@ -304,7 +308,7 @@ Pour ouvrir le visualisateur, il suffit de cliquer sur \icon[\og \oe il \fg]{oei
 
 Le visualisateur est l'élément d'interface qui à l'air le plus compliqué dans \appName. En fait, son organisation est plutôt simple, mais comme il permet d'accéder à presque toutes les fonctions de programmation des objets, beaucoup de choses sont affichées.
 
-Comme le montre l'illustration ci-dessous, le visualisateur se compose de grandes catégories (dans l'exemple ci-dessous, on voit les catégories \og Briques de base \fg et \og Tests \fg) qui contiennent un certain nombre de briques.
+Comme le montre l'illustration ci-dessous, le visualisateur se compose de grandes catégories (dans l'exemple ci-dessous, on voit les catégories \important{Briques de base} et \important{Tests}) qui contiennent un certain nombre de briques.
 
 \capture{9.png}
 
@@ -316,53 +320,54 @@ Nous verrons un peu plus tard les différents types de brique. Pour l'instant, e
 
 \capture{11bis.png}
 
-Les scripts peuvent soit être exécuté juste une fois en cliquant sur le point d'exclamation jaune (dans notre cas, notre bestiole va donc avancer de 5 pixels), soit ils peuvent être démarrés pour de bon.
+Les scripts peuvent soit être exécuté juste une fois en cliquant sur le \icon{exclamation} point d'exclamation jaune (dans notre cas, notre bestiole va donc avancer de 5 pixels), soit ils peuvent être démarrés pour de bon.
 
-Si tu cliques sur la petite horloge à côté de \textit{normal}, tu démarres le script. Cela veut dire que, tant que tu ne le mettras pas en pause en re-cliquant sur l'horloge, \appName va exécuter en boucle le contenu du script. Essaie donc !
+En cliquant sur la petite horloge \icon{horlogestop} à côté de \textit{normal}, on démarre le script. Cela veut dire que, tant qu'on ne le mettra pas en pause en re-cliquant sur l'horloge, \appName va exécuter en boucle le contenu du script. Essayons !
 
 Normalement, la bestiole devrait se mettre à bouger vers le haut : en réalité, elle avance dans la direction de son \motcle{cap}. Nous verrons un peu plus tard ce que signifie le cap, et comment le modifier.
 
-À n'importe quel moment, même quand le programme est en marche, tu peux cliquer sur ton dessin pour le prendre et le déplacer ailleurs sur le bureau. C'est pratique quand ton objet est coincé contre un bord, par exemple.
+\marginpar{Seules les zones non-transparentes d'un objet peuvent être \og saisies \fg~: avec les enfants, il vaut mieux remplir (avec le seau) les zones transparentes à l'intérieur d'un objet avec une couleur pour qu'ils soient plus facile à attraper.}
+À n'importe quel moment, même quand le programme est en marche, il est possible de cliquer sur le dessin pour le prendre et le déplacer ailleurs sur le bureau. C'est pratique quand un objet est coincé contre un bord, par exemple.
 
 Essayons maintenant de compléter le script pour que la bestiole tourne en même temps qu'elle avance. Pour cela, prennons la brique \brique{tourne de 5} et déposons-là en-dessous ou au-dessus de la brique \brique{avance de 5}, à l'intérieur du script que nous avons créé.
 
 \capture{12.png}
 
-Si ton script était déjà en marche, tu devrais voir ta bestiole commencer à tourner, sinon, met-le en route.\marginpar{Le chemin que décrit notre objet s'appelle sa \important{trajectoire}. En faisant varier la vitesse et la vitesse de rotation, on change la trajectoire ! Tu as du remarquer que cette trajectoire a d'ailleurs une forme que tu connais bien~: comment s'appelle-t'elle~?}
+Si notre script était déjà en marche, nous devrions voir notre bestiole commencer à tourner, sinon, mettons-le en route.\marginpar{Le chemin que décrit notre objet s'appelle sa \important{trajectoire}. En faisant varier la vitesse et la vitesse de rotation, on modifie cette dernière. On remarque rapidement que cette trajectoire est un... cercle~!}
 
-Comme nous pouvons le voir, les briques \brique{avance de 5} et \brique{tourne de 5} prennent une vitesse comme option (en programmation, on appelle ça un \motcle{parametre}). Essayons de les faire varier !
+Comme nous pouvons le voir, les briques \brique{avance de 5} et \brique{tourne de 5} prennent une vitesse comme option (en programmation, on appelle ça un \motcle{parametre}). Essayons de les faire varier pendant l'exécution du script !
 
 \capture{13bis.png}
 
-\afaire{Que penses-tu de cette trajectoire~? Comment pourrait-on faire tourner la bestiole dans l'autre sens~?}
+\afaire{Que penser de cette trajectoire~? Comment pourrait-on faire tourner la bestiole dans l'autre sens~?}
 
 \section{Voir les trajectoires}
 \label{traces}
 Pour mieux voir la trajectoire de notre bestiole, nous allons lui demander de laisser une trace de son passage.
 
-Pour cela, ouvre la catégorie \textit{Traces}, en cliquant sur le titre d'une des catégories déjà affichées du visualisateur (tu devrais avoir \textit{Scripts}, \textit{Briques de bases} et \textit{Tests}), puis en sélectionnant \textit{Traces}.
+Pour cela, ouvrons la catégorie \important{Traces}, en cliquant sur le titre d'une des catégories déjà affichées du visualisateur (\important{Scripts}, \important{Briques de bases} et \important{Tests} devraient déjà être visible), puis en sélectionnant \textit{Traces}.
 
 \capture{14.png}
 
-Dans le panneau de la catégorie trace, choisis une couleur de trace qui te plait, augmente un peu la largeur de la trace, puis change la brique \brique{laisse trace} pour la mettre à \textit{vrai} (clique sur la flêche du bas ou du haut, à côté de \textit{faux}).
+Dans le panneau de la catégorie \important{Traces}, choisissons une couleur de trace, augmentons un peu la largeur de la trace, puis changeons la valeur de la brique \brique{laisse trace} pour la mettre à \textit{vrai} (en cliquant sur la flèche du bas ou du haut, à côté de \textit{faux}).
 
 \capture{15.png}
 
-Redémarre ton script si besoin.
+Si besoin, on redémarre le script.
 
 \capture{16.png}
 
 Cette fois-ci plus de doute, notre bestiole parcourt un cercle !
 
-Tu peux effacer les traces en cliquant sur le \icon{exclamation} point d'exclamation devant la brique \brique{efface traces}, et recommencer, en changeant la vitesse de ta bestiole. Pour arrêter de laisser des traces, il suffit de remettre à \textit{faux} la brique \brique{laisse trace}.
+Il est possible d'effacer les traces en cliquant sur le \icon{exclamation} point d'exclamation devant la brique \brique{efface traces}, et recommencer, en changeant la vitesse de la bestiole. Pour arrêter de laisser des traces, il suffit de remettre à \textit{faux} la brique \brique{laisse trace}.
 
 \section{Un grain de folie !}
 
-...les bestioles, en général, n'ont pas une belle trajectoire circulaire comme cela~: essayons de mettre un peu de folie là-dedans !
+...les bestioles, en général, n'ont pas une belle trajectoire circulaire comme cela~: essayons de mettre un grain de folie là-dedans.
 
 Pour cela, nous allons utiliser un peu de ...\important{hasard}.
 
-Si ce n'est pas fait, met ton script en pause en cliquant sur \icon{horlogestop} l'horloge, puis clique sur \icon[Boite à fonctions]{boiteaoutils} dans la fenêtre du script.
+Si ce n'est pas fait, mettons notre script en pause en cliquant sur \icon{horlogestop} l'horloge, puis cliquons sur \icon[Boite à fonctions]{boiteaoutils} dans la fenêtre du script.
 
 \capture{17.png}
 
@@ -378,15 +383,18 @@ Logique ! la brique \brique{hasard} nous renvoie une valeur au hasard entre 0 et
 
 Ça veut dire que la bestiole tourne toujours dans le même sens, vers la droite.
 
-\afaire{Comment faire pour qu'elle tourne parfois à droite, parfois à gauche, pour avoir ainsi une trajectoire qui ait l'air un peu plus hésistante ?}
+\afaire{
+Comment faire pour qu'elle tourne parfois à droite, parfois à gauche, pour avoir ainsi une trajectoire qui ait l'air un peu plus hésistante ?
 
-Si par exemple, on veut que la bestiole tourne de -10 à +10, la solution la plus simple consiste à tirer au sort un nombre entre 0 et 20, et à soustraire 10. Pour faire cela, tu peux utiliser la flèche verte au bout de la ligne de \brique{tourne de} : elle permet d'ajouter des opérations.
+Si par exemple, on veut que la bestiole tourne de -10 à +10, la solution la plus simple consiste à tirer au sort un nombre entre 0 et 20, et à soustraire 10. Pour faire cela, on peut utiliser la flèche verte au bout de la ligne de \brique{tourne de} : elle permet d'ajouter des opérations.
 
+\marginpar{Une astuce pour ne pas que la bestiole se retrouve coincée dans un coin~: si on ajoute la brique \brique{rebondit} (qui est disponible dans la catégorie \important{Mouvements}) en haut ou en bas de notre script, la bestiole fera demi-tour lorsqu'elle heurte un bord de fenêtre.}
 \capture{19.png}
+}
 
 Cette fois-ci, nous avons une vraie trajectoire de bestiole qui ne sait pas trop où elle va !
 
-Voilà, nous savons maintenant comment créer un petit programme ! Avant de passer à la suite, une petite astuce : démarre ton script, et pendant que la bestiole bouge, affiche son halo en faisant un \cd dessus. Clique maintenant sur \icon[Dupliquer]{dupliquer} : hop ! tu viens de faire une copie de ta bestiole.
+Voilà, nous savons maintenant comment créer un petit programme ! Avant de passer à la suite, une petite astuce : après que le script est démarré, et pendant que la bestiole bouge, affichons son halo en faisant un \cd dessus. Cliquons maintenant sur \icon[Dupliquer]{dupliquer} : hop ! nous venons de faire une copie de notre bestiole.
 
 \capture{20.png}
 
