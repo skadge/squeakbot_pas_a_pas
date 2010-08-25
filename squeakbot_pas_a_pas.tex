@@ -27,6 +27,8 @@
 
 \usepackage{enumerate}
 
+\usepackage{pdfpages} %% To add a cover to the doc
+
 % Fixme notes
 \usepackage[draft,footnote,marginclue]{fixme}
 
@@ -171,6 +173,12 @@ Planète Sciences
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+
+\IfFileExists{cover.pdf}{
+\includepdf[pages=-, fitpaper]{cover.pdf}
+\thispagestyle{empty}
+\cleardoublepage
+}
 
 \sffamily
 \allsectionsfont{\sffamily}
@@ -731,5 +739,4 @@ Maintenant, quand de nouvelles bestioles voient le jour, elles démarrent bien a
 \vfill
 
 \end{document}
-
 
