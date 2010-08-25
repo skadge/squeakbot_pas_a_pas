@@ -7,3 +7,25 @@ Un guide pour découvrir les EToys, du premier pas jusqu'à une application comp
 Auteur: Séverin Lemaignan <severin.lemaignan@planete-sciences.org>
 
 Ce livre est diffusé sous license Creative Commons 3.0 Paternité-Partage à l'identique - Pas d'utilisation commerciale
+
+
+
+Une version PDF de ce guide peut facilement être téléchargée depuis le site GitHub :
+http://github.com/skadge/squeakbot_pas_a_pas/downloads
+
+Sinon, pour compiler vous même la documentation, vous devez avoir une installation Latex fonctionnelle.
+
+Sous Ubuntu :
+> sudo apt-get install texlive
+(paquet similaire sous d'autres distributions)
+
+Sous Windows :
+http://chamblandes.tuxfamily.org/LaTeXWindows/index.html
+
+
+Ensuite, téléchargez le source du projet depuis GitHub
+- soit avec l'outil Git si vous connaissez,
+- soit comme archive: http://github.com/skadge/squeakbot_pas_a_pas/archives/master
+
+Puis lancez:
+> pdflatex squeakbot_pas_a_pas.tex
