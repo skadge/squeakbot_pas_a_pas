@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%             SqueakBot Pas à Pas             %%
+%%         SqueakBot et les Bestioles          %%
 %%                                             %%
 %%         Planète Sciences 2009-2010          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,6 +17,13 @@
 \usepackage{ifthen}
 
 \usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\pdfmapfile{+ubuntu-regular.map}
+\pdfmapfile{+ubuntu-it.map}
+\pdfmapfile{+ubuntu-bold.map}
+\renewcommand{\rmdefault}{Ubuntu}
+
 \usepackage{listings}
 
 \usepackage{fancyhdr} %headers and footers
@@ -82,7 +89,9 @@
 
 \newcommand{\brique}[1]
 {
+\sffamily
 \fcolorbox[RGB]{200,192,144}{200,248,200}{\textbf{#1}}
+\normalfont
 }
 
 %Commande pour la mise en forme du code, comme les noms de scripts
@@ -180,9 +189,6 @@ Planète Sciences
 \cleardoublepage
 }
 
-\sffamily
-\allsectionsfont{\sffamily}
-
 \maketitle
 
 \tableofcontents
@@ -201,7 +207,7 @@ Planète Sciences
 
 L'une des forces et, en réalité, la principale raison d'être de \appName, c'est qu'il permet aux enfants, jeunes et moins jeunes, d'expérimenter autant qu'ils le souhaitent, sans jamais se demander si ce qu'il font est juste ou faux, bon ou pas bon.
 
-Les pages qui suivent proposent une découverte approfondie de \appName dans le cadre de la réalisation d'un projet relativement complexe, qui devrait permettre à chacun de devenir vraiment à l'aise à l'intérieur de l'interface parfois un peu déroutante de \appName, tout en mesurant l'étendue des possibilités qu'il ouvre.
+Les pages qui suivent proposent une découverte approfondie de \appName~dans le cadre de la réalisation d'un projet relativement complexe, qui devrait permettre à chacun de devenir vraiment à l'aise à l'intérieur de l'interface parfois un peu déroutante de \appName, tout en mesurant l'étendue des possibilités qu'il ouvre.
 
 Cependant ce tutoriel ne devrait sans doute pas être utilisé tel quel pour mener un projet avec les enfants. Il ne s'agit en particulier pas de remettre ce livret dans les mains des enfants et de leur dire \og Amusez-vous bien~! \fg~: à suivre pas à pas le projet, ils passeraient à côté de cet esprit d'expérimentation, ce vent de créativité que nous voulons développer.
 
@@ -309,7 +315,7 @@ Nous sommes maintenant prêt pour la programmation.
 \section{Notre premier programme}
 \label{premier_programme}
 
-Nous avons fait connaissance avec les objets. Ils sont encore bien statiques... Essayons maintenant de leur donner vie. Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\marginpar{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName est appelé \important{langage orienté objet}.}
+Nous avons fait connaissance avec les objets. Ils sont encore bien statiques... Essayons maintenant de leur donner vie. Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\marginpar{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName~est appelé \important{langage orienté objet}.}
 
 Le point de départ pour tous les programmes (ou \motcle{script}, comme nous allons les appeler dans \appName), c'est le \motcle{visualisateur} de chaque objet.
 
@@ -333,7 +339,7 @@ Nous verrons un peu plus tard les différents types de brique. Pour l'instant, e
 
 Les scripts peuvent soit être exécuté juste une fois en cliquant sur le \icon{exclamation} point d'exclamation jaune (dans notre cas, notre bestiole va donc avancer de 5 pixels), soit ils peuvent être démarrés pour de bon.
 
-En cliquant sur la petite horloge \icon{horlogestop} à côté de \textit{normal}, on démarre le script. Cela veut dire que, tant qu'on ne le mettra pas en pause en re-cliquant sur l'horloge, \appName va exécuter en boucle le contenu du script. Essayons !
+En cliquant sur la petite horloge \icon{horlogestop} à côté de \textit{normal}, on démarre le script. Cela veut dire que, tant qu'on ne le mettra pas en pause en re-cliquant sur l'horloge, \appName~va exécuter en boucle le contenu du script. Essayons !
 
 Normalement, la bestiole devrait se mettre à bouger vers le haut : en réalité, elle avance dans la direction de son \motcle{cap}. Nous verrons un peu plus tard ce que signifie le cap, et comment le modifier.
 
@@ -567,9 +573,9 @@ et copions notre bestiole en changeant sa couleur (avec \icon[Dupliquer]{dupliqu
 
 Pour créer une copie de notre bestiole, c'est assez simple~: créons un nouveau script (en glissant un \brique{script vide} depuis la catégorie \important{Scripts} de la bestiole) que nous pouvons nommer \code{seMultiplie}.
 
-\important{Attention~: le script décrit ci-dessous risque de bloquer \appName car il crée très rapidement des centaines de copies de bestioles. Avant de le tester, pensez à sauvegarder votre image !}
+\important{Attention~: le script décrit ci-dessous risque de bloquer \appName~car il crée très rapidement des centaines de copies de bestioles. Avant de le tester, pensez à sauvegarder votre image !}
 
-Dans ce script, nous allons ajouter un test de couleur (brique \brique{est sur la couleur}), et si le teste est vrai, nous allons utiliser la brique \brique{ajoute} de la catégorie \important{Conteneur} l'objet \code{world} (accessible via son halo et \icon{oeil}, en faisant un \cd sur le bureau).
+Dans ce script, nous allons ajouter un test de couleur (brique \brique{est sur la couleur}), et si le teste est vrai, nous allons utiliser la brique \brique{ajoute} de la catégorie \important{Conteneur} l'objet \code{Monde} (accessible via son halo et \icon{oeil}, en faisant un \cd sur le bureau).
 
 Cette brique à par défaut comme paramètre un objet \brique{point} :
 \capture{36.png}
@@ -579,7 +585,7 @@ Or, nous ne voulons pas ajouter un point, mais une copie de la bestiole. Nous po
 \capture{37.png}
 
 \marginpar{Tous les scripts peuvent être démarrés et arrêter depuis la catégorie \important{Scripts} du visualisateur de l'objet auquel ils appartiennent. C'est parfois bien pratique pour ne pas envahir le bureau avec des multitudes de fenêtres.}
-Sauvegardons l'image en cours, et testons notre nouveau script en démarrant préalablement le script \code{mouvementBestiole}. Une catastrophe s'annonce~: en effet, dès que la bestiole violette touche la bestiole orange, \appName va créer très rapidement des copies de la bestiole violette et en quelques secondes, le logiciel va se bloquer... On a gagné le droit d'interrompre et de redémarrer \appName...
+Sauvegardons l'image en cours, et testons notre nouveau script en démarrant préalablement le script \code{mouvementBestiole}. Une catastrophe s'annonce~: en effet, dès que la bestiole violette touche la bestiole orange, \appName~va créer très rapidement des copies de la bestiole violette et en quelques secondes, le logiciel va se bloquer... On a gagné le droit d'interrompre et de redémarrer \appName...
 
 \capture{38.png}
 
@@ -597,7 +603,7 @@ Il y a plusieurs choses à faire :
 
 Prenons ces différents points dans l'ordre~:
 
-Pour détruire facilement toutes les copies de notre bestiole, il faut d'abord savoir que les copies réalisées avec la brique \brique{copie} sont ce que \appName appelle des \textit{frères} de notre bestiole. Ils gardent un lien particulier avec leur modèle initial, ce qui permet par exemple d'exécuter un script sur toutes les copies à la fois avec la brique \brique{dit à la fratrie} de la catégorie \important{Contrôle des scripts}.
+Pour détruire facilement toutes les copies de notre bestiole, il faut d'abord savoir que les copies réalisées avec la brique \brique{copie} sont ce que \appName~appelle des \textit{frères} de notre bestiole. Ils gardent un lien particulier avec leur modèle initial, ce qui permet par exemple d'exécuter un script sur toutes les copies à la fois avec la brique \brique{dit à la fratrie} de la catégorie \important{Contrôle des scripts}.
 
 Si on ajoute un script \code{meure} à notre bestiole, qui la fait disparaitre, on peut \og tuer \fg tous les frères en utilisant la brique \brique{dit à la fratrie meure}. Créons un nouveau script \code{tuerMesFreres} qui fait ça :
 
@@ -638,7 +644,7 @@ Créons donc une variable \code{age}, et changeons sa valeur pour la mettre à z
 
 Comment faire pour faire \og vieillir \fg la bestiole ? Il faudrait incrémenter, par exemple toute les secondes, l'âge de la bestiole.
 
-\marginpar{Pour changer le rythme d'exécution d'un programme, il faut cliquer et rester appuyé sur l'icône \icon{horlogestop} du script jusqu'à ce que le menu \textit{Rythme} s'affiche. On peut alors choisir combien de fois pas seconde le script doit s'exécuter.}
+\marginpar{Pour changer le rythme d'exécution d'un programme, il faut cliquer et rester appuyé sur l'icône \icon{horlogestop} du script jusqu'à ce que le menu \textit{Rythme} s'affiche. On peut alors choisir combien de fois par seconde le script doit s'exécuter.}
 Créons un nouveau script, \code{vieillit}, chargé de cette tâche, et changeons sa vitesse d'exécution pour qu'il soit appelé une fois par seconde~:
 
 \capture{44.png}
@@ -654,7 +660,7 @@ Pour faire mourir notre bestiole quand elle devient trop vieille, il suffit d'aj
 
 Attention ! Si vous attendez que la bestiole meure, elle va disparaitre, avec tous ces scripts ! C'est le moment de faire une copie de votre bestiole (avec \icon[Dupliquer]{dupliquer}) à garder dans un coin (ou dans le tiroir \important{Accessoires}, comme nous avons vu plus tôt). Pensez aussi à faire des sauvegardes régulières
 
-Si nous relançons la simulation, avec les bestioles qui se déplacent, se reproduisent, et meurent, nous allons cependant constater qu'il y a un problème : tous les enfants d'une bestiole meurent en même temps qu'elle, même s'ils ont été créé bien plus tard (et son donc plus jeunes). Comment cela se fait-il ?
+Si nous relançons la simulation, avec les bestioles qui se déplacent, se reproduisent, et meurent, nous allons cependant constater qu'il y a un problème : tous les enfants d'une bestiole meurent en même temps qu'elle, même s'ils ont été créé bien plus tard (et sont donc plus jeunes). Comment cela se fait-il ?
 
 Lorsqu'on crée un enfant, on crée une copie de la bestiole initiale, avec tous ses paramètres... y compris son âge actuel !
 Nous voulons copier certains paramètres (la position de la bestiole, par exemple, afin que les petits apparaissent au même endroit que leurs parents, ou encore, l'état des scripts -- démarrés ou non -- pour que les enfants se mettent en marche immédiatement), mais par contre, il faut remettre l'âge à zéro.
