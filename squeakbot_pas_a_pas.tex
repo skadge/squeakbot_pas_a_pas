@@ -662,8 +662,7 @@ Attention ! Si vous attendez que la bestiole meure, elle va disparaitre, avec to
 
 Si nous relançons la simulation, avec les bestioles qui se déplacent, se reproduisent, et meurent, nous allons cependant constater qu'il y a un problème : tous les enfants d'une bestiole meurent en même temps qu'elle, même s'ils ont été créé bien plus tard (et sont donc plus jeunes). Comment cela se fait-il ?
 
-Lorsqu'on crée un enfant, on crée une copie de la bestiole initiale, avec tous ses paramètres... y compris son âge actuel !
-Nous voulons copier certains paramètres (la position de la bestiole, par exemple, afin que les petits apparaissent au même endroit que leurs parents, ou encore, l'état des scripts -- démarrés ou non -- pour que les enfants se mettent en marche immédiatement), mais par contre, il faut remettre l'âge à zéro.
+Lorsqu'on crée un enfant, on crée une copie de la bestiole initiale, avec tous ses paramètres... y compris son âge actuel ! Nous voulons copier certains paramètres (la position de la bestiole, par exemple, afin que les petits apparaissent au même endroit que leurs parents, ou encore, l'état des scripts -- démarrés ou non -- pour que les enfants se mettent en marche immédiatement), mais par contre, il faut remettre l'âge à zéro.
 
 Pour pouvoir faire ça, il faut que l'on garde une \important{référence} vers les nouveaux objets créés quand on les copie, pour pouvoir ensuite changer leur âge. Et pour garder une référence, on utilise une variable !
 
@@ -686,7 +685,17 @@ Puis il faut \important{remplacer} la partie \brique{Ma bestiole.} (c'est à dir
 Maintenant, quand de nouvelles bestioles voient le jour, elles démarrent bien avec un âge de 0.
 
 \section{Ça grandit, ça grandit}
-\fixme {Les bestioles changent de taille avec l'âge}
+
+En vieillissant, forcément, on grandit ! En réutilisant la variable \code{age}, il est facile de faire changer la taille de la bestiole en fonction de son nombre d'années.
+
+Dans la catégorie \important{Géométrie}, la propriété \brique{échelle} permet de jouer avec la taille de nos objets (essayez de redimensionner l'objet dont le visualisateur est ouvert avec \icon{redimensionner}, et voyez comment évolue l'échelle).
+
+Modifions le script \code{vieillit} pour faire grandir notre bestiole (sans la faire partir de 0 : on ne verrait plus du tout le bébé !) :
+
+\marginpar{À vous de jouer~: Vous pouvez d'abord améilorer le calcul de l'échelle pour arriver pile à 1.0 à 50 ans, et non à 1.03. Ensuite, comment faire pour que la bestiole se \og tasse \fg lorsqu'elle devient trop vieille, vers 80 ans ? Pensez à imbriquer les blocs \brique{Si Oui Non} !}
+
+\capture{52.png}
+
 
 \section{Bon appétit !}
 \fixme {Nourrir les bébêtes}
