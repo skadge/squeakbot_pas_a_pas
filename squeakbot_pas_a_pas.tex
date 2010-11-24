@@ -10,6 +10,8 @@
 %\documentclass[a4paper,12pt,twoside]{article}
 \documentclass[a4paper,12pt]{book}
 
+\usepackage{fullpage}
+
 \usepackage{graphicx}
 
 \usepackage{xcolor}
@@ -25,8 +27,10 @@
 \renewcommand{\rmdefault}{Ubuntu}
 
 \usepackage{listings}
-
+\usepackage{framed}
+\usepackage{wrapfig}
 \usepackage{fancyhdr} %headers and footers
+\pagestyle{fancy}
 
 \usepackage{url}
 \usepackage{hyperref}
@@ -87,28 +91,18 @@
 \end{center}
 }
 
-\newcommand{\brique}[1]
-{
+\newcommand{\brique}[1]{
 \sffamily
 \fcolorbox[RGB]{200,192,144}{200,248,200}{\textbf{#1}}
 \normalfont
 }
 
 %Commande pour la mise en forme du code, comme les noms de scripts
-\newcommand{\code}[1]
-{
-\texttt{#1}
-}
+\newcommand{\code}[1]{\texttt{#1}}
 
-\newcommand{\important}[1]
-{
-\textbf{#1}
-}
+\newcommand{\important}[1]{\textbf{#1}}
 
-\newcommand{\motcle}[2]
-{
-\important{\gls{#1}}
-}
+\newcommand{\motcle}[2]{\important{\gls{#1}}}
 
 
 \newcommand{\inserticon}[1]
@@ -130,6 +124,20 @@
 #1
 }
 
+\newcommand{\astuce}[1]
+{
+\begin{framed}
+%\marginpar{#1}
+%[RGB]{214,141,0}{251,240,220}
+\begin{wrapfigure}[3]{l}{1.8em}
+	\vspace{-15pt}
+	\includegraphics[width=2.0em]{astuce.png}
+\end{wrapfigure}
+#1
+\end{framed}
+}
+
+
 %Met par defaut la taille en scriptsize et la font en sans serif pour les notes dans la marge
 \let\myMargin\marginpar
 \renewcommand{\marginpar}[1]{\myMargin{{\scriptsize \sffamily #1}}}
@@ -140,15 +148,17 @@
 %################# En-tête et pieds de page avec fancyhdr
 \headheight=14.85pt
 %pour récupérer les noms de section en minuscule
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\sffamily #1}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 \fancyhf{}
-\fancyhead[RO]{\bfseries\rightmark}
-\fancyhead[LE]{\bfseries\leftmark}
+\fancyhead[RO,LE]{\bfseries\leftmark}
+%\fancyhead[LE]{\rightmark}
 \fancyfoot[LE,RO]{\bfseries\thepage}
-\renewcommand{\headrulewidth}{0.5pt}
-\addtolength{\headheight}{0.5pt}
+\renewcommand{\headrulewidth}{0.3pt}
+%\addtolength{\headheight}{2pt}
+\addtolength{\headsep}{20pt}
+\addtolength{\footskip}{10pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}
 
@@ -197,6 +207,7 @@ Planète Sciences
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
+\thispagestyle{empty}
 ~
 \vfill
 \begin{center}
@@ -315,7 +326,7 @@ Nous sommes maintenant prêt pour la programmation.
 \section{Notre premier programme}
 \label{premier_programme}
 
-Nous avons fait connaissance avec les objets. Ils sont encore bien statiques... Essayons maintenant de leur donner vie. Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\marginpar{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName~est appelé \important{langage orienté objet}.}
+Nous avons fait connaissance avec les objets. Ils sont encore bien statiques... Essayons maintenant de leur donner vie. Leur donner vie, ça va être, pour nous, associer à nos objets des \important{programmes} qui vont par exemple les faire bouger ou les modifier.\astuce{Dans \appName, les programmes sont intimement liés aux objets. Chaque objet a ses propres programmes. C'est pour cela que \important{Smalltalk}, le langage de programmation qui est derrière \appName~est appelé \important{langage orienté objet}.}
 
 Le point de départ pour tous les programmes (ou \motcle{script}, comme nous allons les appeler dans \appName), c'est le \motcle{visualisateur} de chaque objet.
 
@@ -343,14 +354,14 @@ En cliquant sur la petite horloge \icon{horlogestop} à côté de \textit{normal
 
 Normalement, la bestiole devrait se mettre à bouger vers le haut : en réalité, elle avance dans la direction de son \motcle{cap}. Nous verrons un peu plus tard ce que signifie le cap, et comment le modifier.
 
-\marginpar{Seules les zones non-transparentes d'un objet peuvent être \og saisies \fg~: avec les enfants, il vaut mieux remplir (avec le seau) les zones transparentes à l'intérieur d'un objet avec une couleur pour qu'ils soient plus facile à attraper.}
+\astuce{Seules les zones non-transparentes d'un objet peuvent être \og saisies \fg~: avec les enfants, il vaut mieux remplir (avec le seau) les zones transparentes à l'intérieur d'un objet avec une couleur pour qu'ils soient plus facile à attraper.}
 À n'importe quel moment, même quand le programme est en marche, il est possible de cliquer sur le dessin pour le prendre et le déplacer ailleurs sur le bureau. C'est pratique quand un objet est coincé contre un bord, par exemple.
 
 Essayons maintenant de compléter le script pour que la bestiole tourne en même temps qu'elle avance. Pour cela, prennons la brique \brique{tourne de 5} et déposons-là en-dessous ou au-dessus de la brique \brique{avance de 5}, à l'intérieur du script que nous avons créé.
 
 \capture{12.png}
 
-Si notre script était déjà en marche, nous devrions voir notre bestiole commencer à tourner, sinon, mettons-le en route.\marginpar{Le chemin que décrit notre objet s'appelle sa \important{trajectoire}. En faisant varier la vitesse et la vitesse de rotation, on modifie cette dernière. On remarque rapidement que cette trajectoire est un... cercle~!}
+Si notre script était déjà en marche, nous devrions voir notre bestiole commencer à tourner, sinon, mettons-le en route.\astuce{Le chemin que décrit notre objet s'appelle sa \important{trajectoire}. En faisant varier la vitesse et la vitesse de rotation, on modifie cette dernière. On remarque rapidement que cette trajectoire est un... cercle~!}
 
 Comme nous pouvons le voir, les briques \brique{avance de 5} et \brique{tourne de 5} prennent une vitesse comme option (en programmation, on appelle ça un \motcle{parametre}). Essayons de les faire varier pendant l'exécution du script !
 
@@ -405,7 +416,7 @@ Comment faire pour qu'elle tourne parfois à droite, parfois à gauche, pour avo
 
 Si par exemple, on veut que la bestiole tourne de -10 à +10, la solution la plus simple consiste à tirer au sort un nombre entre 0 et 20, et à soustraire 10. Pour faire cela, on peut utiliser la flèche verte au bout de la ligne de \brique{tourne de} : elle permet d'ajouter des opérations.
 
-\marginpar{Une astuce pour ne pas que la bestiole se retrouve coincée dans un coin~: si on ajoute la brique \brique{rebondit} (qui est disponible dans la catégorie \important{Mouvements}) en haut ou en bas de notre script, la bestiole fera demi-tour lorsqu'elle heurte un bord de fenêtre.}
+\astuce{Une astuce pour ne pas que la bestiole se retrouve coincée dans un coin~: si on ajoute la brique \brique{rebondit} (qui est disponible dans la catégorie \important{Mouvements}) en haut ou en bas de notre script, la bestiole fera demi-tour lorsqu'elle heurte un bord de fenêtre.}
 \capture{19.png}
 }
 
@@ -423,7 +434,7 @@ Voilà, nous savons maintenant comment créer un petit programme ! Avant de pass
 
 Pour continuer, allons explorer quelques unes des catégories de briques disponibles dans le visualisateur. Au chapitre \ref{premier_programme}, nous avions vu comment était organisé le visualisateur. Regardons maintenant de plus près certaines des catégories existantes.
 
-\marginpar{Les tests sont au c\oe ur de tous les programmes informatiques. C'est ce qu'on appelle une \important{Structure de contrôle}}.
+\astuce{Les tests sont au c\oe ur de tous les programmes informatiques. C'est ce qu'on appelle une \important{Structure de contrôle}.}
 
 Commencons par la catégorie \important{Tests} qui doit déjà être affichée à l'écran (sinon, on peut masquer les autres panneaux avec \icon[Minimiser]{minimiser})~:
 
@@ -465,7 +476,7 @@ Modifions notre programme précédent pour faire disparaitre notre bestiole quan
 
 \capture{24.png}
 
-\marginpar{N'oubliez pas~! on peut toujours exécuter une action (ou un script) une fois en cliquant sur le \icon{exclamation} point d'exclamation placé devant}
+\astuce{N'oubliez pas~! on peut toujours exécuter une action (ou un script) une fois en cliquant sur le \icon{exclamation} point d'exclamation placé devant.}
 En exécutant le programme, notre bestiole va disparaitre dès qu'elle touche la couleur détectée ...mais si vous affichez toujours la trace de votre bestiole, vous devriez voir la trace repartir ! en effet, vu que notre objet est invisible, les couleurs ne se touchent plus, notre test devient \code{Faux}, et la bestiole repart ! Nous allons voir tout de suite comment améliorer cela.
 
 En attendant, nous pouvons faire réapparaitre la bestiole en cliquant une fois sur le \icon{exclamation} point d'exclamation placé devant la brique \brique{Montrer} dans le visualisateur.
@@ -493,7 +504,7 @@ Pour cela, nous allons commencer par créer un bouton. Pour ce faire, il faut ou
 
 \capture{31.png}
 
-\marginpar{On ne peut pas déplacer le bouton simplement en cliquant dessus comme les autres objets. Pour le déplacer, utilisez \icon[Attraper]{attraper} dans le halo du bouton.}
+\astuce{On ne peut pas déplacer le bouton simplement en cliquant dessus comme les autres objets. Pour le déplacer, utilisez \icon[Attraper]{attraper} dans le halo du bouton.}
 Renommons-le \code{raz} (remise à zéro), et, dans le halo, cliquons sur \icon[Menu]{menu} pour afficher le menu du bouton. L'option \code{Modifier l'étiquette} va nous permettre de changer l'étiquette du bouton pour quelque chose comme \og Remise à zéro \fg.
 
 \capture{32.png}
@@ -520,7 +531,7 @@ En réalité, pour \important{modifier} la valeur d'un paramètre (et donc, en q
 
 \capture{28.png}
 
-\marginpar{On peut toujours masquer un script, sans le supprimer, en cliquant sur l'icône \icon{minimiser}.}
+\astuce{On peut toujours masquer un script, sans le supprimer, en cliquant sur l'icône \icon{minimiser}.}
 
 Pour remettre la bestiole au centre de l'écran, le plus simple est de l'y déplacer, puis d'afficher la catégorie \important{Briques de base} de la bestiole. En faisant glisser les briques \brique{x}, \brique{y} et \brique{cap} via leur \icon{flecheverte} flèche verte dans le script de remise à zéro, on va pouvoir automatiquement replacer notre bestiole au milieu de l'écran à chaque fois que le script \code{raz} sera exécuté : en effet, celui-ci va \important{assigner} (ou \textit{affecter}) les valeurs en pixels et en degré que nous venons de définir aux paramètres \code{x}, \code{y} et \code{cap}.
 
@@ -528,7 +539,7 @@ Pour remettre la bestiole au centre de l'écran, le plus simple est de l'y dépl
 
 Vous avez peut-être remarqué que ce script n'était pas un script de l'objet \code{Ma bestiole}, mais d'un objet appelé \code{world}. L'objet \motcle{monde} (\textit{world} en anglais) est le containeur le plus général~: tout les autres objets en font partie.
 
-\marginpar{Le script \code{raz} pourrait en réalité être créé dans n'importe quel objet~: ça marcherait tout aussi bien. Mais pour faciliter la compréhension des programmes, il est important de garder une bonne organisation, et de veiller à attacher les programmes aux objets concernés.}
+\astuce{Le script \code{raz} pourrait en réalité être créé dans n'importe quel objet~: ça marcherait tout aussi bien. Mais pour faciliter la compréhension des programmes, il est important de garder une bonne organisation, et de veiller à attacher les programmes aux objets concernés.}
 
 Si vous voulez retrouver plus tard le script \code{raz}, affichez le visualisateur du monde en faisant un \cd sur le bureau pour faire apparaitre le halo du monde, et comme d'habitude, cliquez sur \icon{oeil}.
 \capture{27.png}
@@ -544,19 +555,20 @@ Utilisons notre script \code{raz} pour faire un peu de ménage avant de passer �
 
 \section{Sauvegarder son projet}
 
-\marginpar{Il existe un greffon pour les navigateurs courant permettant d'afficher directement, sur Internet, un projet \appName~: bien pratique pour valoriser un travail~! Il peut être télécharger depuis cette page~: \url{http://wiki.squeak.org/squeak/1865} (en anglais).}
 Dans les prochains chapitres, nous allons être amener à faire des tests durant lesquels pleins de \og copies \fg de nos bestioles vont être créée, ce qui pourra parfois faire \og planter \fg \appName... Avant d'aller plus loin, il est donc utile de voir comment sauvegarder notre projet. Ça sera aussi bien utile si on veut l'échanger avec d'autres ou le présenter sur Internet.
 
 \capture{46bis.png}
 
 Il faut d'abord nommer notre projet (par exemple, \textit{Bestioles}), puis cliquer sur le bouton du menu \important{Publier} (ce bouton permet de sauvegarder le projet sur le disque dur, mais aussi de le publier en ligne si vous avez un compte \textit{Squeakland}).
 
-\marginpar{Il est possible de créer d'autres dossiers en faisant un \cm dans l'arborescence de l'écran de sauvegarde. Cependant un bogue rend la sélection de l'entrée dans le menu qui s'ouvre alors un peu difficile. Il peut être nécessaire de déplacer un peu la fenêtre et de garder appuyer le bouton du milieu.}
+\astuce{Il est possible de créer d'autres dossiers en faisant un \cm dans l'arborescence de l'écran de sauvegarde. Cependant un bogue rend la sélection de l'entrée dans le menu qui s'ouvre alors un peu difficile. Il peut être nécessaire de déplacer un peu la fenêtre et de garder appuyer le bouton du milieu.}
 Les deux écrans suivant permettent d'ajouter des méta-données à votre projet, puis de le sauvegarder dans le dossier par défaut \textit{My Squeak}.
 
 \capture{47.png}
 
 Dans les étapes suivantes, n'oubliez pas de sauvegarder régulièrement votre projet !
+
+\astuce{Il existe un greffon pour les navigateurs courant permettant d'afficher directement, sur Internet, un projet \appName~: bien pratique pour valoriser un travail~! Il peut être télécharger depuis cette page~: \url{http://wiki.squeak.org/squeak/1865} (en anglais).}
 
 \section{Les bestioles font des bébés}
 
@@ -575,16 +587,16 @@ Pour créer une copie de notre bestiole, c'est assez simple~: créons un nouveau
 
 \important{Attention~: le script décrit ci-dessous risque de bloquer \appName~car il crée très rapidement des centaines de copies de bestioles. Avant de le tester, pensez à sauvegarder votre image !}
 
-Dans ce script, nous allons ajouter un test de couleur (brique \brique{est sur la couleur}), et si le teste est vrai, nous allons utiliser la brique \brique{ajoute} de la catégorie \important{Conteneur} l'objet \code{Monde} (accessible via son halo et \icon{oeil}, en faisant un \cd sur le bureau).
+Dans ce script, nous allons ajouter un test de couleur (brique \brique{est sur la couleur}), et quand le test est vrai, nous allons utiliser la brique \brique{ajoute} de la catégorie \important{Conteneur} de l'objet \code{Monde} (accessible via son halo et \icon{oeil}, en faisant un \cd sur le bureau).
 
 Cette brique à par défaut comme paramètre un objet \brique{point} :
 \capture{36.png}
 
-Or, nous ne voulons pas ajouter un point, mais une copie de la bestiole. Nous pouvons en obtenir une dans la catégorie \important{Divers} de la bestiole. Prenons cette brique \brique{Ma bestiole.copie} et remplaçons \brique{point} :
+Or, nous ne voulons pas ajouter un point, mais une copie de la bestiole. Nous pouvons en obtenir une dans la catégorie \important{Divers} de la bestiole. Prenons cette brique \brique{Ma bestiole.copie} et remplaçons \brique{point}~:
 
 \capture{37.png}
 
-\marginpar{Tous les scripts peuvent être démarrés et arrêter depuis la catégorie \important{Scripts} du visualisateur de l'objet auquel ils appartiennent. C'est parfois bien pratique pour ne pas envahir le bureau avec des multitudes de fenêtres.}
+\astuce{Tous les scripts peuvent être démarrés et arrêter depuis la catégorie \important{Scripts} du visualisateur de l'objet auquel ils appartiennent. C'est parfois bien pratique pour ne pas envahir le bureau avec des multitudes de fenêtres.}
 Sauvegardons l'image en cours, et testons notre nouveau script en démarrant préalablement le script \code{mouvementBestiole}. Une catastrophe s'annonce~: en effet, dès que la bestiole violette touche la bestiole orange, \appName~va créer très rapidement des copies de la bestiole violette et en quelques secondes, le logiciel va se bloquer... On a gagné le droit d'interrompre et de redémarrer \appName...
 
 \capture{38.png}
@@ -626,7 +638,7 @@ Ensuite, nous voulons éloigner la bestiole violette de la bestiole orange quand
 Pour ajouter 180 degrés au cap, il faut glisser la brique \brique{cap} de la bestiole dans le test, en l'attrapant par la \icon{flecheverte} flèche verte. En cliquant ensuite sur \brique{cap $\leftarrow$}, on accède à un menu dans lequel on peut choisir \code{augmenter de}.
 \capture{41.png}
 
-\marginpar{Attention~: nos bestioles se reproduisent quand une bestiole violette touche du orange ...or la brique de test contient du orange ! Les bestioles vont donc aussi se multiplier lorsqu'elles touchent la brique de test. On peut éviter ça en masquant le test avec l'icône \icon{minimiser}. Voyez-vous une autre manière de faire, en changeant le type de test ?}
+\astuce{Attention~: nos bestioles se reproduisent quand une bestiole violette touche du orange ...or la brique de test contient du orange ! Les bestioles vont donc aussi se multiplier lorsqu'elles touchent la brique de test. On peut éviter ça en masquant le test avec l'icône \icon{minimiser}. Voyez-vous une autre manière de faire, en changeant le type de test ?}
 Après quelques contacts, de nouvelles bestioles apparaissent :
 
 \capture{42.png}
@@ -644,14 +656,14 @@ Créons donc une variable \code{age}, et changeons sa valeur pour la mettre à z
 
 Comment faire pour faire \og vieillir \fg la bestiole ? Il faudrait incrémenter, par exemple toute les secondes, l'âge de la bestiole.
 
-\marginpar{Pour changer le rythme d'exécution d'un programme, il faut cliquer et rester appuyé sur l'icône \icon{horlogestop} du script jusqu'à ce que le menu \textit{Rythme} s'affiche. On peut alors choisir combien de fois par seconde le script doit s'exécuter.}
+\astuce{Pour changer le rythme d'exécution d'un programme, il faut cliquer et rester appuyé sur l'icône \icon{horlogestop} du script jusqu'à ce que le menu \textit{Rythme} s'affiche. On peut alors choisir combien de fois par seconde le script doit s'exécuter.}
 Créons un nouveau script, \code{vieillit}, chargé de cette tâche, et changeons sa vitesse d'exécution pour qu'il soit appelé une fois par seconde~:
 
 \capture{44.png}
 
 Si on teste ce script en le mettant en marche, l'âge de la bestiole devrait augmenter petit à petit.
 
-\marginpar{Pour faire une comparaison d'une valeur numérique, il suffit de glisser une brique numérique sur le test : les opérateurs de comparaison vont être automatiquement ajoutés, comme sur la capture d'écran ci-contre.}
+\astuce{Pour faire une comparaison d'une valeur numérique, il suffit de glisser une brique numérique sur le test : les opérateurs de comparaison vont être automatiquement ajoutés, comme sur la capture d'écran ci-contre.}
 Pour faire mourir notre bestiole quand elle devient trop vieille, il suffit d'ajouter un test au script \code{vieillit} qui appelle le script \code{meure} de la bestiole quand son âge est supérieur à l'âge maximal (par exemple, 100) :
 
 \capture{45.png}
@@ -692,10 +704,9 @@ Dans la catégorie \important{Géométrie}, la propriété \brique{échelle} per
 
 Modifions le script \code{vieillit} pour faire grandir notre bestiole (sans la faire partir de 0 : on ne verrait plus du tout le bébé !) :
 
-\marginpar{À vous de jouer~: Vous pouvez d'abord améilorer le calcul de l'échelle pour arriver pile à 1.0 à 50 ans, et non à 1.03. Ensuite, comment faire pour que la bestiole se \og tasse \fg lorsqu'elle devient trop vieille, vers 80 ans ? Pensez à imbriquer les blocs \brique{Si Oui Non} !}
-
 \capture{52.png}
 
+\astuce{À vous de jouer~: Vous pouvez d'abord améilorer le calcul de l'échelle pour arriver pile à 1.0 à 50 ans, et non à 1.05. Ensuite, comment faire pour que la bestiole se \og tasse \fg lorsqu'elle devient trop vieille, vers 80 ans ? Pensez à imbriquer les blocs \brique{Si Oui Non} !}
 
 \section{Bon appétit !}
 \fixme {Nourrir les bébêtes}
@@ -736,11 +747,13 @@ Modifions le script \code{vieillit} pour faire grandir notre bestiole (sans la f
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
+\thispagestyle{empty}
 ~
 \vfill
 \begin{center}
 	Planète Sciences 2010.\\
 	Cet ouvrage est diffusé sous license Creative Commons Paternité-Partage à l'identique.\\
+	\vspace{2cm}
 	\includegraphics[scale=0.5]{logo_cc.png}
 \end{center}
 
