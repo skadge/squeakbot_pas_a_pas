@@ -975,15 +975,61 @@ faire partir de 0 : on ne verrait plus du tout le bébé !) :
 
 \capture{52.png}
 
-\astuce{À vous de jouer~: Vous pouvez d'abord améilorer le calcul de l'échelle
+\astuce{À vous de jouer~: Vous pouvez d'abord améliorer le calcul de l'échelle
 pour arriver pile à 1.0 à 50 ans, et non à 1.05. Ensuite, comment faire pour
 que la bestiole se \og tasse \fg lorsqu'elle devient trop vieille, vers 80 ans
 ? Pensez à imbriquer les blocs \brique{Si Oui Non} !}
 
-\section{Bon appétit !} \fixme {Nourrir les bébêtes}
+\section{Bon appétit !}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Notre simulation commence à prendre forme. Dernière chose importante :
+l'alimentation de nos charmantes bestioles. En effet, tout animal a besoin d'énergie pour se déplacer !
+
+Nous allons essayer, dans ce chapitre, de programmer les choses suivantes :
+\begin{itemize}
+	\item Des petits paquets de nourriture qui puissent être mangés,
+	\item Le niveau d'énergie des bestioles, qui baisse en permanence, et remonte quand la bestiole trouve de la nourriture,
+	\item De la nourriture, qui disparait au fur et à mesure qu'elle est mangée,
+	\item La vitesse de la bestiole, qui dépend de l'énergie dont elle dispose.
+\end{itemize}
+
+\subsection{Des petits paquets de nourriture qui se font grignoter}
+
+Dessinons pour commencer quelques fruits :
+
+\capture{53.png}
+
+Appelons ce nouvel object \code{Fruits}, et ajoutons-lui une nouvelle variable
+(avec l'icône \icon{variable} dans son visualisateur) appelée \code{niveau} :
+cette variable représente la quantité de nourriture encore disponible sur ce
+tas là.
+
+Ajoutons encore un script aux fruits pour les faire disparaitre lorsque le
+niveau est à zéro (c'est un script très proche de celui que nous avions créé
+lorsque les bestioles meurent) :
+
+\capture{54.png}
+
+Glissons les fruits dans le tiroir des accessoires pour en garder une copie toujours disponible quand on voudra ajouter de la nourriture dans le monde.
+
+
+Il faut maintenant aller modifier les bestioles pour qu'elles mangent nos fruits.
+
+Commençons par leur ajouter une variable \code{énergie}, et créons un script appelé \code{fatigue} qui fait diminuer l'énergie des bestioles :
+
+\capture{55.png}
+
+
+\subsection{Les fruits disparaissent petit à petit}
+
+Au fur et à mesure que les bestioles mangent la nourriture, il serait logique que
+
+\astuce{Cette technique avec le \important{Conteneur} permet de réaliser toutes
+sortes d'animations cycliques. Par exemple, un bonhomme qui marche.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Un monde merveilleux}
 
 \section{Le centre de contrôle}
