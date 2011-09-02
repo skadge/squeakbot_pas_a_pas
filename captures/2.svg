@@ -12,11 +12,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47pre4 r22446"
+   inkscape:version="0.48+devel r"
    width="1300"
    height="857"
    sodipodi:docname="2.svg"
-   inkscape:export-filename="/media/Documents/Planète Sciences/Projets/SqueakBot/SqueakBot Pas à Pas/captures/2.png"
+   inkscape:export-filename="/media/Documents/Planète Sciences/Projets/SqueakBot/squeakbot_pas_a_pas/captures/2.png"
    inkscape:export-xdpi="199.94075"
    inkscape:export-ydpi="199.94075">
   <metadata
@@ -27,7 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -217,27 +217,28 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1440"
-     inkscape:window-height="834"
+     inkscape:window-width="1360"
+     inkscape:window-height="744"
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.77889008"
-     inkscape:cx="628.74777"
-     inkscape:cy="554.90304"
+     inkscape:cx="446.35212"
+     inkscape:cy="606.41642"
      inkscape:window-x="0"
-     inkscape:window-y="38"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <image
-     xlink:href="file:///home/skadge/Bureau/Plan%C3%A8te%20Sciences/Projets/SqueakBot/SqueakBot%20Pas%20%C3%A0%20Pas/captures/0.png"
-     id="image12"
-     x="165.47192"
-     y="106.71026"
+     sodipodi:absref="/media/Documents/Planète Sciences/Projets/SqueakBot/squeakbot_pas_a_pas/captures/0.png"
+     xlink:href="0.png"
+     height="648"
      width="968"
-     height="648" />
+     y="106.71026"
+     x="165.47192"
+     id="image12" />
   <g
      id="g3617"
-     transform="translate(209.8399,-14.345208)">
+     transform="translate(185.44622,-14.345208)">
     <rect
        ry="11.01292"
        rx="11.01292"
@@ -302,28 +303,28 @@
        ry="11.01292"
        rx="11.01292"
        y="9.4355278"
-       x="181.11942"
+       x="151.58926"
        height="60.395725"
-       width="194.62585"
+       width="224.15524"
        id="rect3590-8"
-       style="fill:#ffffff;stroke:#c8c8c8;stroke-width:4.99999809000000006;stroke-linejoin:miter;stroke-miterlimit:2.20000004999999987;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1" />
+       style="fill:#ffffff;fill-opacity:1;stroke:#c8c8c8;stroke-width:4.99999809;stroke-linejoin:miter;stroke-miterlimit:2.20000005;stroke-opacity:1;stroke-dasharray:none" />
     <text
        id="text3592-6"
-       y="33.688171"
-       x="282.54504"
+       y="35.613987"
+       x="264.57074"
        style="font-size:27.63793755px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#404040;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        xml:space="preserve"
        sodipodi:linespacing="100%"><tspan
          style="font-size:27.63793755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
-         y="33.688171"
-         x="282.54504"
+         y="35.613987"
+         x="264.57074"
          id="tspan3594-1"
          sodipodi:role="line">Bibliothèque</tspan><tspan
          style="font-size:27.63793755px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"
-         y="61.326107"
-         x="282.54504"
+         y="63.251926"
+         x="264.57074"
          sodipodi:role="line"
-         id="tspan4295">des objets</tspan></text>
+         id="tspan4295">des accessoires</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot4325"
