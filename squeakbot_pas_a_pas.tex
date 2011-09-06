@@ -594,11 +594,12 @@ bestiole quand elle touche une trace :
 
 \capture{24.png}
 
-\astuce{N'oubliez pas~! on peut toujours exécuter une action (ou un script) une
+\astuce{N'oublie pas~! on peut toujours exécuter une action (ou un script) une
 fois en cliquant sur le \icon{exclamation} point d'exclamation placé devant.}
+
 En exécutant le programme, notre bestiole va disparaitre dès qu'elle touche la
-couleur détectée ...mais si vous affichez toujours la trace de votre bestiole,
-vous devriez voir la trace repartir ! en effet, vu que notre objet est
+couleur détectée ...mais si tu affiches toujours la trace de ta bestiole,
+tu devrais voir la trace repartir. en effet, vu que notre objet est
 invisible, les couleurs ne se touchent plus, notre test devient \code{Faux}, et
 la bestiole repart ! Nous allons voir tout de suite comment améliorer cela.
 
@@ -975,10 +976,10 @@ faire partir de 0 : on ne verrait plus du tout le bébé !) :
 
 \capture{52.png}
 
-\astuce{À vous de jouer~: Vous pouvez d'abord améliorer le calcul de l'échelle
+\astuce{À toi de jouer~: Tu peux d'abord améliorer le calcul de l'échelle
 pour arriver pile à 1.0 à 50 ans, et non à 1.05. Ensuite, comment faire pour
 que la bestiole se \og tasse \fg lorsqu'elle devient trop vieille, vers 80 ans
-? Pensez à imbriquer les blocs \brique{Si Oui Non} !}
+? Penses à imbriquer les blocs \brique{Si Oui Non} !}
 
 \section{Bon appétit !}
 
@@ -1010,19 +1011,94 @@ lorsque les bestioles meurent) :
 
 \capture{54.png}
 
-Glissons les fruits dans le tiroir des accessoires pour en garder une copie toujours disponible quand on voudra ajouter de la nourriture dans le monde.
+\astuce{Pour ne pas que les fruits disparaissent trop rapidement, pense bien à
+changer le rythme du script (en restant appuyé sur
+\icon[Horloge]{horlogestop}). Tu peux le mettre par exemple à 1 Hz (1 fois par
+seconde).}
 
+Glissons les fruits dans le tiroir des accessoires pour en garder une copie
+toujours disponible quand on voudra ajouter de la nourriture dans le monde.
 
-Il faut maintenant aller modifier les bestioles pour qu'elles mangent nos fruits.
+Il faut maintenant aller modifier les bestioles pour qu'elles mangent nos
+fruits.
 
-Commençons par leur ajouter une variable \code{énergie}, et créons un script appelé \code{fatigue} qui fait diminuer l'énergie des bestioles :
+Commençons par leur ajouter une variable \code{énergie}, et créons un script
+appelé \code{fatigue} qui fait diminuer l'énergie des bestioles :
 
 \capture{55.png}
 
+Dès que nous mettrons en route le script, l'énergie de notre bestiole diminuera
+petit à petit. Pour ce script aussi, change le rythme pour que les bestioles ne
+s'épuisent pas trop vite.
+
+Il faut maintenant faire en sorte que les bestioles puissent se nourrir, et
+regagner ainsi de l'énergie.
+
+Pour cela, créons un nouveau script dans notre bestiole, \code{mange}. Ce
+script utilise une brique de test ainsi que le test \brique{touche un} que tu trouveras, comme tous les tests, dans la catégories \important{Tests} de la bestiole :
+
+\capture{56.png}
+
+\astuce{À toi de jouer~: peux-tu modifier un peu le script pour s'assurer que
+l'énergie de la bestiole ne dépasse jamais 100 ?}
+
+Le test \brique{touche un} est un peu particulier : il permet de détecter quand
+notre objet touche une \important{copie} d'un autre objet. Il prend en
+paramètre le \important{modèle} (l'objet dont on va faire des copies). Dans
+notre script, le modèle est donc \brique{Fruits}.
+
+Si on teste le script maintenant, il ne se passera rien : le contact entre la
+bestiole et les fruits ne sera pas détecté. Le test ne fonctionne que sur des
+\emph{copies} du modèle. Il faut donc faire une copie des fruits (icône
+\icon{dupliquer}), et cette fois, le test va marcher. L'intérêt de ce test est
+qu'on va pouvoir faire autant de copies de fruits qu'on veut, le test marchera
+pour toutes ces copies.
+
+De même, créons un script \code{estmangé} dans les fruits, inversé par rapport
+au script \code{mange} :
+
+\capture{57.png}
+
+On peut maintenant tester notre système de nourriture. Démarrons les scripts
+\code{mange} et \code{estmangé} de nos modèles de bestiole et de fruit, puis
+créons des copies des modèles.
+
+\astuce{Pour afficher la valeur d'une variable sur le bureau, il suffit de
+l'attraper dans le visualisateur, et de la lâcher sur l'aire de jeu. Pratique
+pour voir comment les programmes se comportent.}
+
+Tu peux aussi démarrer les scripts \code{mouvementBestiole} et \code{fatigue}
+de la copie de bestiole.
+
+Lorsque notre copie de bestiole passe sur la copie de fruit, le niveau des
+fruits baisse, et l'énergie de la bestiole augmente.
+
+\capture{58.png}
+
+\astuce{À toi de jouer~: essaye de modifier les fruits pour qu'ils affichent en
+permanence leur niveau d'énergie restante. Petite piste : on peut créer un
+objet texte qu'on \emph{ajoute} au fruit. Pour permettre à un fruit d'accepter
+des \emph{objets inclus}, il faut activer l'option dans son menu (icône
+\icon{menu} de son halo).}
+
+Ça y est, notre simulation prend en compte l'alimentation de nos bestioles. Si
+elles ne mangent pas, elles perdent de l'énergie et finissent par mourir.
 
 \subsection{Les fruits disparaissent petit à petit}
 
-Au fur et à mesure que les bestioles mangent la nourriture, il serait logique que
+Au fur et à mesure que les bestioles mangent la nourriture, il serait logique
+que celle-ci disparaissent.
+
+Une méthode pour faire disparaitre petit à petit nos fruits consiste à réaliser
+plusieurs dessins (en \icon{dupliquer} dupliquant et \icon{redessiner}
+modifiant le dessin original), et à les regrouper dans un \important{conteneur}
+(disponible dans le tiroir \important{Accessoires}) :
+
+\capture{59}
+
+Ce conteneur va nous servir pour modifier l'apparence de nos fruits en fonction de leur niveau d'énergie restante.
+
+Créons un nouveau script, \code{apparence}, pour les fruits :
 
 \astuce{Cette technique avec le \important{Conteneur} permet de réaliser toutes
 sortes d'animations cycliques. Par exemple, un bonhomme qui marche.}
