@@ -1100,9 +1100,26 @@ Ce conteneur va nous servir pour modifier l'apparence de nos fruits en fonction 
 
 Créons un nouveau script, \code{apparence}, pour les fruits :
 
+\capture{60}
+
+Ce script utilise deux tests imbriqués pour déplacer le \important{curseur} du
+conteneur (le rectangle noir) sur le bon dessin, en fonction du niveau
+d'énergie.
+
+Ensuite, il change \important{l'allure} des fruits (brique \brique{allure} dans
+la catégorie \important{Allure} des fruits) en utilisant la brique
+\brique{graphique sous curseur} de la catégorie \important{Conteneur} du
+conteneur.
+
+On peut ensuite démarrer le script (et le laisser tourner en permanence), puis
+changer à la main la valeur de l'énergie des fruits dans leur visualisateur.
+Dès qu'on passe en-dessous de 65 puis en-dessous de 33, les fruits devraient
+changer d'apparence.
+
 \astuce{Cette technique avec le \important{Conteneur} permet de réaliser toutes
 sortes d'animations cycliques. Par exemple, un bonhomme qui marche.}
 
+\astuce{À toi de jouer~: pour finir cette partie, modifie le script de déplacement des bestioles afin que leur niveau d'énergie influe sur leur vitesse : rapide quand elles sont pleines d'énergie, lentes quand elles sont épuisées.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
